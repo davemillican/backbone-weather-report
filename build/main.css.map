@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,SAAU;EACN,gBAAgB,ECFR,OAAc",
+"sources": ["../src/scss/components/_averages.scss","../src/scss/components/_colors.scss"],
+"names": [],
+"file": "main.css"
+}

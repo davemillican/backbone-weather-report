@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax work</title>
+    <link rel="stylesheet" type="text/css" href="build/main.css">
+</head>
+<body>
+
+    <main id="plug"></main>
+<script id ="city-template" type='text/template'>
+    <h1>Forecast for <%= get('name') %></h1>
+    <h2>Country: <%= get('country') %></h2>
+    <h2>Latitude: <%= get('lat') %></h2>
+    <h2>Longitude: <%= get('lon') %></h2>
+</script>
+<script id ="averages-template" type='text/template'>
+    <div class="averages">
+        <h1>Averages</h1>
+        <ul>
+            <li><%= description %></li>
+            <li>Hi Temp: <%= max %> </li> 
+            <li>Lo: Temp: <%= min %> </li> 
+            <li>Humidity: <%= humidity %>%</li> 
+            <li>Wind: <%= speed %> MPH direction:<%= deg %></li> 
+        </ul>
+    </div>
+</script>
+<script id ="weather-template" type='text/template'>
+    <div class="report-item">
+        <ul>
+            <li>Date: <%= new Date(get("dt") * 1000).toDateString() %> </li>
+            <li><%= get('weather')[0].description %></li>
+            <li>Hi Temp: <%= fTempHigh() %> </li> 
+            <li>Lo Temp: <%= fTempLow() %> </li> 
+            <li>Humidity: <%= get('humidity') %>%</li> 
+            <li>Wind: <%= get('speed') %> MPH <%= windDirection() %></li> 
+        </ul>
+    </div>
+</script>
+<script type="text/javascript" src="node_modules/underscore/underscore.js"></script>
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="node_modules/backbone/backbone.js"></script>
+<script type="text/javascript" src="src/js/utilities.js"></script>
+<script type="text/javascript" src="src/js/inputView.js"></script>
+<script type="text/javascript" src="src/js/cityModel.js"></script>
+<script type="text/javascript" src="src/js/dayView.js"></script>
+<script type="text/javascript" src="src/js/AveragesView.js"></script>
+<script type="text/javascript" src="src/js/weatherView.js"></script>
+<script type="text/javascript" src="src/js/cityView.js"></script>
+<script type="text/javascript" src="src/js/weathercollection.js"></script>
+<script type="text/javascript" src="src/js/appview.js"></script>
+<script type="text/javascript" src="src/js/main.js"></script>
+</body>
+</html>
